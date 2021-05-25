@@ -7,6 +7,9 @@
   "author": "Fintual Team",
   "license": "MIT",
   "private": false,
+  "engines": {
+    "yarn": "1.22.10"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
