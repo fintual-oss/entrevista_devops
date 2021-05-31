@@ -9,12 +9,13 @@ app.get('/', function (req, res) {
 })
 
 app.get('/increment/:count', function (req, res) {
+  const increment = parseInt(req.params.count, 10);
   const previousCount = parseInt(process.env.APP_COUNT, 10) || 0;
-  const count = parseInt(req.params.count, 10) + previousCount;
+  const count = previousCount + increment;
 
   process.env.APP_COUNT = count;
 
-  res.send(`Count incremeted by ${count}`)
+  res.send(`Count incremeted by ${increment} and now is ${count}`)
 })
 
 app.get('/ping', function (req, res) {
